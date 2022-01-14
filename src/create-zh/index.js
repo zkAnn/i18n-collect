@@ -58,15 +58,15 @@ function getFiles(val) {
   const files = fs.readdirSync(val);
   for (let i = 0; i < files.length; i++) {
     const item = files[i];
-    const stat = fs.lstatSync(val + "\\" + item);
+    const stat = fs.lstatSync(path.join(val, item));
     if (stat.isDirectory() === true) {
       if (!ignore.includes(item)) {
-        arrFiles = arrFiles.concat(getFiles(val + "\\" + item));
+        arrFiles = arrFiles.concat(getFiles(path.join(val, item)));
       }
     } else {
       if (/^.*\.(vue|js)$/.test(item)) {
         /* 只提取vue和js文件 */
-        arrFiles.push(val + "\\" + item);
+        arrFiles.push(path.join(val, item));
       }
     }
   }
