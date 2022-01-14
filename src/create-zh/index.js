@@ -77,7 +77,10 @@ export default async () => {
     console.log(chalk.cyan("查找路径：" + process.cwd()));
     spinner.start(chalk.cyan("正在查找关键字..."));
     let keywords = findKeyWords();
-
+    if (!keywords.length) {
+      spinner.fail(chalk.green(`未找到关键字`));
+      return;
+    }
     spinner.succeed(chalk.green(`本次查找到${keywords.length}个关键字`));
     console.log(keywords);
     spinner.start(chalk.cyan("写入文件..."));
