@@ -31,7 +31,7 @@ function findKeyWords() {
     const fileString = fs.readFileSync(filePath).toString();
 
     let arr = [];
-    fileString.replace(/\$T\((.*)\)/g, function (text, group) {
+    fileString.replace(/\$T\((.+?)\)/g, function (text, group) {
       if (/[\u4e00-\u9fa5]/g.test(group)) {
         let key = group.match(/(["'])(.*)\1/);
 
