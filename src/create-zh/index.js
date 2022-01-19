@@ -31,16 +31,20 @@ function findKeyWords() {
     const fileString = fs.readFileSync(filePath).toString();
 
     let arr = [];
-    fileString.replace(/\$T\((.+?)\)/g, function (text, group) {
-      if (/[\u4e00-\u9fa5]/g.test(group)) {
-        let key = group.match(/(["'])(.*)\1/);
-
-        arr.push(key[2]);
+    fileString.replace(/\$T\(\)|\$T\(\s*(['"])(.+?)\1\s*\)|\$T\(\s*([\s\S]+?)\s*\)/g, function (text, group, group2,group3) {
+     if(text==='$T()'){
+       return 
+     }
+      if(group2){
+        arr.push(group2);
+      }else{
+        let key = group3.match(/(['"])(.+)\1/)
+        arr.push(key[2])
       }
     });
     keywords = [...keywords, ...arr];
   });
-  return [...new Set(keywords)];
+  return [...new Set(keywords)].sort((x, y) => (x > y && 1) || -1);
 }
 function writeFileTemplate(data) {
   const tempalte = `export default ${data}`;
@@ -91,3 +95,9 @@ export default async () => {
     console.log(err);
   }
 };
+
+// {
+//   output:"src/i18n/config",
+//   include:['src'],
+//   excludes:['node_module'],
+// }
