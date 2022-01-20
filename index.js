@@ -2,8 +2,8 @@
 
 import commander from "commander";
 
-import createZh from "./src/create-zh/index.js";
-import createOther from "./src/create-other/index.js";
+import createFont from "./src/create-font/index.js";
+
 const version = "1.0.0";
 
 commander
@@ -11,10 +11,10 @@ commander
   .command("create <language>")
   .description("搜索当前目录下的vue和js文件，生成相应的语言包")
   .action(async (language) => {
-    if (language === "zh") {
-      await createZh();
-    } else {
-      await createOther();
+    if (language === "font") {
+      await createFont();
+    }else{
+      console.log("Do you mean  cl create font")
     }
-  });
+  })
 commander.parse(process.argv);
