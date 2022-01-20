@@ -2,9 +2,9 @@ import fs from "fs";
 import chalk from "chalk";
 import ora from "ora";
 import path from "path";
-import getConfigOption from "./getConfigOption.js"
+import getConfigOption from "../common/getConfigOption.js"
 import scanFiles from "./scanFiles.js"
-import readFile from "./readFile.js";
+import readFile from "../common/readFile.js";
 import createMap from "./createMap.js";
 import findKeywords from "./findKeywords.js"
 import compare from "./compare.js";

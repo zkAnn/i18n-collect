@@ -1,7 +1,7 @@
 export default {
   "n1": {
     "zh": "A形态",
-    "en": ""
+    "en": "test1"
   },
   "n3": {
     "zh": "形态1",
