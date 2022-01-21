@@ -15,8 +15,9 @@ export default function findKeyWords(files) {
       if(group2){
         arr.push(group2);
       }else{
-        let key = group3.match(/(['"])(.+)\1/)
-        arr.push(key[2])
+        let key = group3.match(/(['"])(.+)\1/);
+        
+        key && arr.push(key[2])
       }
     });
     keywords = [...keywords, ...arr];

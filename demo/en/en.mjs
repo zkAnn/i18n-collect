@@ -1,4 +1,4 @@
 export default {
-  "n2": "tongyihang",
-  "n1": "test1"
+  "n1": "test1",
+  "n2": "tongyihang"
 }
