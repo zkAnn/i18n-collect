@@ -1,6 +1,7 @@
 <template>
   <div>
     <ul>
+      <li>{{$T("asn 单号")}}</li>
       <li>
         <h3>形态1</h3>
         <div>{{ $T("形态1") }}</div>
@@ -35,10 +36,10 @@
         <h3>形态7</h3>
         <div>{{ $T() }}(123)</div>
       </li>
-       <li>
-        <h3>形态8</h3>
-        <div>$T('字符串')</div>
-      </li>
+        <li>
+        <h3>形态7</h3>
+        <div>{{ $T("A form") }}(123)</div>
+      </li>$T("Same line")
     </ul>
   </div>
 </template>

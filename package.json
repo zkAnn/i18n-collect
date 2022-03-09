@@ -1,21 +1,25 @@
 {
-  "name": "create-language",
+  "name": "i18n-collect",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "cl": "./index.js"
+    "cl": "./bin/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.0",
     "chalk": "^5.0.0",
     "commander": "^8.3.0",
+    "md5-node": "^1.0.1",
     "ora": "^6.0.1"
   },
-  "type":"module"
+  "type": "module",
+  "devDependencies": {
+    "rollup-plugin-json": "^4.0.0"
+  }
 }
